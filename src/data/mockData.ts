@@ -332,7 +332,7 @@ export const mockTransactions: Transaction[] = [
  *  Bar chart data
  *  ========================= */
 export interface BarDatum {
-    country: string;
+    [key: string]: string | number;
     "hot dog": number;
     hotDogColor: string;
     burger: number;

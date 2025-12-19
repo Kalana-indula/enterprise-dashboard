@@ -1,8 +1,7 @@
 import {Box, IconButton, Typography, useTheme} from "@mui/material";
 import { Link } from "react-router-dom";
-import {tokens} from "../../theme.ts";
+import {tokens} from "../../theme";
 import {type ReactNode, useState} from "react";
-import "react-pro-sidebar/dist/css/styles.css";
 import {Sidebar, Menu, MenuItem} from 'react-pro-sidebar';
 import {
     BarChartOutlined,
@@ -25,8 +24,6 @@ interface ItemProps {
 const Item = ({title,to,icon,selected,setSelected}:ItemProps) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    const [isCollapsed,setIsCollapsed]=useState<boolean>(false);
-    const [sidebarSelected,setIsSidbarSelected]=useState<string>("Dashboard");
     return (
         <MenuItem
             active={selected === title}
@@ -35,9 +32,9 @@ const Item = ({title,to,icon,selected,setSelected}:ItemProps) => {
             }}
             onClick={() => setSelected(title)}
             icon={icon}
+            component={ <Link to={to} />}
         >
             <Typography>{title}</Typography>
-            <Link to={to} />
         </MenuItem>
     );
 }
@@ -51,20 +48,21 @@ const AppSidebar = () => {
         <>
             <Box
                 sx={{
-                    "& .pro-sidebar-inner": {
-                        background: `${colors.primary[400]} !important`,
+                    "& .ps-sidebar-container": {
+                        backgroundColor: `${colors.primary[400]} !important`,
                     },
-                    "& .pro-icon-wrapper": {
+                    "& .ps-menu-button": {
                         backgroundColor: "transparent !important",
                     },
-                    "& .pro-inner-item": {
-                        padding: "5px 35px 5px 20px !important",
-                    },
-                    "& .pro-inner-item:hover": {
+                    "& .ps-menu-button:hover": {
                         color: "#868dfb !important",
+                        backgroundColor: "transparent !important",
                     },
-                    "& .pro-menu-item.active": {
+                    "& .ps-active": {
                         color: "#6870fa !important",
+                    },
+                    "& .ps-sidebar-root": {
+                        border: "none !important",
                     },
                 }}
             >
@@ -76,7 +74,7 @@ const AppSidebar = () => {
                             onClick={() => setIsCollapsed(!isCollapsed)}
                             icon={isCollapsed ? <MenuOutlined/> : undefined}
                             style={{
-                                marginRight: "10px 0 20px 0",
+                                margin: "10px 0 20px 0",
                                 color: colors.grey[100],
                             }}
                         >

@@ -16,6 +16,7 @@ import Geography from "./scenes/geography/index.tsx";
 import {useState} from "react";
 import AppSidebar from "./scenes/global/AppSidebar.tsx";
 
+
 const App = () => {
     const [theme, colorMode] = useMode();
     const [isSidebar, setIsSidebar] = useState<boolean>(true);
@@ -25,7 +26,7 @@ const App = () => {
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
                     <div className="app">
-                        <AppSidebar />
+                        <AppSidebar/>
                         <main className="content">
                             <Topbar />
                             <Routes>
