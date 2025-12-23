@@ -13,13 +13,11 @@ import Line from "./scenes/line/index.tsx";
 import FAQ from "./scenes/faq/index.tsx";
 import Calendar from "./scenes/calendar/index.tsx";
 import Geography from "./scenes/geography/index.tsx";
-import {useState} from "react";
 import AppSidebar from "./scenes/global/AppSidebar.tsx";
 
 
 const App = () => {
     const [theme, colorMode] = useMode();
-    const [isSidebar, setIsSidebar] = useState<boolean>(true);
     return (
         <>
             <ColorModeContext.Provider value={colorMode}>
