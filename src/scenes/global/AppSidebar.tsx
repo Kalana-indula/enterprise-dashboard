@@ -86,7 +86,7 @@ const AppSidebar = () => {
                                     ml="15px"
                                 >
                                     <Typography variant="h3" color={colors.grey[100]}>
-                                        ADMINS
+                                        ADMIN
                                     </Typography>
                                     <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                                         <MenuOutlined/>
@@ -102,7 +102,7 @@ const AppSidebar = () => {
                                         alt="profile-user"
                                         width="100px"
                                         height="100px"
-                                        src={`../../assets/user.png`}
+                                        src={`../../assets/user.jpg`}
                                         style={{cursor: "pointer", borderRadius: "50%"}}
                                     />
                                 </Box>
@@ -113,10 +113,10 @@ const AppSidebar = () => {
                                         fontWeight="bold"
                                         sx={{m:"10px 0 0 0"}}
                                     >
-                                        Ed Roh
+                                        John Doe
                                     </Typography>
                                     <Typography variant="h5" color={colors.greenAccent[500]}>
-                                        VP Fancy Admin
+                                        System Admin
                                     </Typography>
                                 </Box>
                             </Box>
